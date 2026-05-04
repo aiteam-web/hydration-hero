@@ -17,9 +17,8 @@ const Index = () => {
         <div className="absolute left-1/3 top-10 h-64 w-64 rounded-full bg-primary-glow/15 blur-3xl" />
       </div>
 
-      {/* Mobile-framed app */}
-      <div className="relative z-10 mx-auto w-full md:w-[390px] md:rounded-[3rem] md:border-[10px] md:border-primary-deep/90 md:shadow-2xl md:overflow-hidden md:h-[800px]">
-        <div key={step} className="h-full animate-fade-in-up opacity-0 md:overflow-y-auto" style={{ animationFillMode: 'forwards' }}>
+      <div className="relative z-10 mx-auto w-full">
+        <div key={step} className="h-full animate-fade-in-up opacity-0" style={{ animationFillMode: 'forwards' }}>
           {step === "intro" && <IntroScreen onStart={() => setStep("cards")} />}
           {step === "cards" && <CardsScreen onDone={() => setStep("done")} />}
           {step === "done" && <CompletionScreen onRestart={() => setStep("intro")} />}
