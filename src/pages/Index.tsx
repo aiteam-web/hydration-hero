@@ -1,16 +1,20 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { IntroScreen } from "@/components/hydration/IntroScreen";
+import { CardsScreen } from "@/components/hydration/CardsScreen";
+import { CompletionScreen } from "@/components/hydration/CompletionScreen";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+type Step = "intro" | "cards" | "done";
+
+const Index = () => {
+  const [step, setStep] = useState<Step>("intro");
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main key={step} className="animate-fade-in-up opacity-0" style={{ animationFillMode: 'forwards' }}>
+      {step === "intro" && <IntroScreen onStart={() => setStep("cards")} />}
+      {step === "cards" && <CardsScreen onDone={() => setStep("done")} />}
+      {step === "done" && <CompletionScreen onRestart={() => setStep("intro")} />}
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
