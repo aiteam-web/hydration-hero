@@ -53,19 +53,19 @@ export const CardsScreen = ({ onDone }: Props) => {
   const isLast = selected === cards.length - 1;
 
   return (
-    <div className="min-h-screen bg-gradient-soft">
-      <div className="mx-auto flex min-h-screen max-w-5xl flex-col px-4 pb-10 pt-10 sm:px-6">
-        <header className="mb-6 text-center">
-          <p className="mb-2 text-xs font-medium uppercase tracking-[0.3em] text-primary">
+    <div className="min-h-screen md:min-h-full md:h-full bg-gradient-soft">
+      <div className="mx-auto flex min-h-screen md:min-h-full md:h-full max-w-md flex-col px-4 pb-6 pt-8">
+        <header className="mb-5 text-center">
+          <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.3em] text-primary">
             Step 02 · Learn & Reflect
           </p>
-          <h2 className="mx-auto max-w-2xl font-display text-3xl font-semibold leading-tight text-primary-deep md:text-4xl">
+          <h2 className="mx-auto max-w-sm font-display text-2xl font-semibold leading-tight text-primary-deep">
             Hydration Habits for a <span className="italic text-primary">Healthy Urinary System</span>
           </h2>
         </header>
 
         {/* Progress dots */}
-        <div className="mx-auto mb-6 flex gap-2">
+        <div className="mx-auto mb-5 flex gap-2">
           {cards.map((_, i) => (
             <button
               key={i}
@@ -80,23 +80,23 @@ export const CardsScreen = ({ onDone }: Props) => {
 
         {/* Carousel */}
         <div className="overflow-hidden flex-1" ref={emblaRef}>
-          <div className="flex">
+          <div className="flex h-full">
             {cards.map((card, i) => {
               const Icon = card.icon;
               const isInteractive = i === cards.length - 1;
               return (
-                <div key={i} className="min-w-0 flex-[0_0_100%] px-2 sm:px-4">
-                  <div className="mx-auto flex min-h-[460px] max-w-xl flex-col rounded-3xl bg-gradient-card p-8 shadow-card ring-1 ring-primary/5 sm:p-10">
-                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                      <Icon className="h-7 w-7" strokeWidth={1.75} />
+                <div key={i} className="min-w-0 flex-[0_0_100%] px-1">
+                  <div className="mx-auto flex h-full min-h-[420px] max-w-sm flex-col rounded-3xl bg-gradient-card p-6 shadow-card ring-1 ring-primary/5">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <Icon className="h-6 w-6" strokeWidth={1.75} />
                     </div>
-                    <p className="mb-2 text-xs font-medium uppercase tracking-[0.25em] text-primary/70">
+                    <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.25em] text-primary/70">
                       {card.eyebrow}
                     </p>
-                    <h3 className="mb-4 font-display text-2xl font-semibold leading-snug text-primary-deep sm:text-3xl">
+                    <h3 className="mb-3 font-display text-xl font-semibold leading-snug text-primary-deep">
                       {card.title}
                     </h3>
-                    <p className="mb-5 text-base leading-relaxed text-muted-foreground">
+                    <p className="mb-4 text-[14px] leading-relaxed text-muted-foreground">
                       {card.body}
                     </p>
                     {card.highlight && (

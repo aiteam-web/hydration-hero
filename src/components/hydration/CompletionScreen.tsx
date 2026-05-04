@@ -12,8 +12,8 @@ const tips = [
 
 export const CompletionScreen = ({ onRestart }: Props) => {
   return (
-    <div className="min-h-screen bg-gradient-soft">
-      <div className="mx-auto flex min-h-screen max-w-2xl flex-col items-center justify-center px-6 py-16 text-center">
+    <div className="min-h-screen md:min-h-full md:h-full bg-gradient-soft">
+      <div className="mx-auto flex min-h-screen md:min-h-full md:h-full max-w-md flex-col items-center justify-center px-6 py-12 text-center">
         <div className="relative mb-8 animate-fade-in-up opacity-0">
           <div className="absolute inset-0 rounded-full bg-accent/30 blur-2xl animate-float" />
           <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-gradient-hero shadow-glow">
@@ -25,7 +25,7 @@ export const CompletionScreen = ({ onRestart }: Props) => {
           Exercise Complete
         </p>
 
-        <h2 className="mb-5 font-display text-5xl font-semibold leading-tight tracking-tight text-primary-deep md:text-6xl animate-fade-in-up opacity-0" style={{ animationDelay: '0.2s' }}>
+        <h2 className="mb-5 font-display text-[2.75rem] font-semibold leading-tight tracking-tight text-primary-deep animate-fade-in-up opacity-0" style={{ animationDelay: '0.2s' }}>
           Keep It <span className="italic text-primary">Up!</span>
         </h2>
 
